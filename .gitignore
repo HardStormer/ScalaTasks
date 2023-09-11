@@ -5,6 +5,7 @@
 hs_err_pid*
 *.cache
 .idea
-/SUU.ScalaTasks/project/target/
-/SUU.ScalaTasks/target/
-/SUU.ScalaTasks/target/scala-2.13/classes/
+SUU.ScalaTasks/project/target/
+SUU.ScalaTasks/target/
+SUU.ScalaTasks/target/scala-2.13/classes/
+
