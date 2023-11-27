@@ -202,32 +202,68 @@ object Main {
   }
 
   private def task5Menu(): Unit = {
-    val teacher = new Teacher("John", "Doe")
+    val teacher = new Teacher("Юлия", "Николаевна")
     val students = List(
-      new Student("Alice", "Smith", 3, "Computer Science", 101),
-      new Student("Bob", "Jones", 3, "Computer Science", 101),
-      new Student("Charlie", "Brown", 3, "Computer Science", 101)
+      new Student("Михаил", "Гузеев", 4, "Computer Science", 411),
+      new Student("Сергей", "Поликарпов", 4, "Computer Science", 411),
+      new Student("Станислав", "Тыньковский", 4, "Computer Science", 411)
     )
 
-    val lecture = new Lecture("Introduction to Scala", teacher, students)
-    val practical = new Practical("Scala Programming", teacher, students)
-    val exam = new Exam("Final Exam", teacher, students)
+    val lecture1 = new Lecture("1 занятие scala", teacher, students)
+    val lecture2 = new Lecture("2 занятие в scala", teacher, students)
+    val lecture3 = new Lecture("3 занятие в scala", teacher, students)
+    val lecture4 = new Lecture("4 занятие в scala", teacher, students)
+    val lecture5 = new Lecture("5 занятие в scala", teacher, students)
+    val lecture6 = new Lecture("6 занятие в scala", teacher, students)
+    val lecture7 = new Lecture("7 занятие в scala", teacher, students)
+    val lecture8 = new Lecture("8 занятие в scala", teacher, students)
+    val lecture9 = new Lecture("9 занятие в scala", teacher, students)
+    val lecture10 = new Lecture("10 занятие в scala", teacher, students)
+    val practical1 = new Practical("Программирование на scala 1", teacher, students)
+    val practical2 = new Practical("Программирование на scala 2", teacher, students)
+    val practical3 = new Practical("Программирование на scala 3", teacher, students)
+    val practical4 = new Practical("Программирование на scala 4", teacher, students)
+    val practical5 = new Practical("Программирование на scala 5", teacher, students)
+    val practical6 = new Practical("Программирование на scala 6", teacher, students)
+    val practical7 = new Practical("Программирование на scala 7", teacher, students)
+    val practical8 = new Practical("Программирование на scala 8", teacher, students)
+    val practical9 = new Practical("Программирование на scala 9", teacher, students)
+    val practical10 = new Practical("Программирование на scala 10", teacher, students)
+    val exam = new Exam("Экзамен", teacher, students)
 
-    lecture.markAttendance()
-    practical.markLabWork()
+    lecture1.markAttendance()
+    lecture2.markAttendance()
+    lecture3.markAttendance()
+    lecture4.markAttendance()
+    lecture5.markAttendance()
+    lecture6.markAttendance()
+    lecture7.markAttendance()
+    lecture8.markAttendance()
+    lecture9.markAttendance()
+    lecture10.markAttendance()
+    practical1.markLabWork()
+    practical2.markLabWork()
+    practical3.markLabWork()
+    practical4.markLabWork()
+    practical5.markLabWork()
+    practical6.markLabWork()
+    practical7.markLabWork()
+    practical8.markLabWork()
+    practical9.markLabWork()
+    practical10.markLabWork()
     exam.conductExam()
 
-    students.foreach(student => println(s"${student.firstName} ${student.lastName} - Total Score: ${student.getTotalScore}, Grade: ${student.getGrade}"))
+    students.foreach(student => println(s"${student.firstName} ${student.lastName} - Результат: ${student.getTotalScore}, Оценка: ${student.getGrade}"))
   }
 
   private def task6Menu(): Unit = {
-    val cat = new MediumAnimal("Cat")
-    val dog = new MediumAnimal("Dog")
-    val rabbit = new MediumAnimal("Rabbit")
+    val cat = new MediumAnimal("Кот")
+    val dog = new MediumAnimal("Собака")
+    val rabbit = new MediumAnimal("Кролик")
 
-    val hamster = new SmallAnimal("Hamster")
-    val rat = new SmallAnimal("Rat")
-    val mouse = new SmallAnimal("Mouse")
+    val hamster = new SmallAnimal("Хомяк")
+    val rat = new SmallAnimal("Крыса")
+    val mouse = new SmallAnimal("Мышь")
 
     val mediumAnimalCage = new AnimalCage[MediumAnimal](List())
     val smallAnimalCage = new AnimalCage[SmallAnimal](List())
@@ -269,7 +305,7 @@ object Main {
     val resultSingleThreadD = sequence.map(operationD)
     val endTimeSingleThread = System.currentTimeMillis()
 
-    println(s"Time for single thread: ${endTimeSingleThread - startTimeSingleThread} ms")
+    println(s"Время для одного потока: ${endTimeSingleThread - startTimeSingleThread} ms")
 
     // Время выполнения операции в двух потоках
     val startTimeTwoThreads = System.currentTimeMillis()
@@ -285,7 +321,7 @@ object Main {
 
     val endTimeTwoThreads = System.currentTimeMillis()
 
-    println(s"Time for two threads: ${endTimeTwoThreads - startTimeTwoThreads} ms")
+    println(s"Время для двух потоков: ${endTimeTwoThreads - startTimeTwoThreads} ms")
 
     // Время выполнения операции в четырех потоках
     val startTimeFourThreads = System.currentTimeMillis()
@@ -301,15 +337,15 @@ object Main {
 
     val endTimeFourThreads = System.currentTimeMillis()
 
-    println(s"Time for four threads: ${endTimeFourThreads - startTimeFourThreads} ms")
+    println(s"Время для трех потоков: ${endTimeFourThreads - startTimeFourThreads} ms")
 
     // Определение точки, начиная с которой использование нескольких потоков выгодно
     val threshold = 1000
 
     if (sequenceSize >= threshold) {
-      println("Using multiple threads is beneficial.")
+      println("Больше потоков - лучше")
     } else {
-      println("Using multiple threads is not beneficial.")
+      println("Больше потоков - хуже")
     }
   }
 }

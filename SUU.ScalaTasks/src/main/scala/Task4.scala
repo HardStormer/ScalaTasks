@@ -10,7 +10,7 @@ object Task4 {
     }
 
     nums match {
-      case Nil => throw new IllegalArgumentException("Empty list")
+      case Nil => throw new IllegalArgumentException("Пустой список")
       case head :: tail =>
         val (less, equal, greater) = partition(tail, head)
         if (less.length == k - 1) head

@@ -18,7 +18,7 @@ object Task6 {
     }
 
     def printOccupants(): Unit = {
-      println(s"Cage occupants: ${occupants.map(_.name).mkString(", ")}")
+      println(s"В клетке: ${occupants.map(_.name).mkString(", ")}")
     }
   }
 
