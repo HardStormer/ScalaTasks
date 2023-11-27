@@ -124,17 +124,12 @@ object Main {
           println(modifiedString)
 
         case 3 =>
-
-          // Ручное каррирование
-          val curriedChipsWeightManual = (Task33.calculateChipsWeight _).curried
+          val chipsWeightFunction: Double => Double => Double = Task33.calculateChipsWeightManual(100.0)
+          val resultManual: Double = chipsWeightFunction(0.9)(0.1)
+          println(resultManual)
 
           // Каррирование с использованием метода curried
           val curriedChipsWeight = Task33.calculateChipsWeight _ curried
-
-          // Пример вызова с частичным применением аргументов
-          val partialChipsWeightManual = curriedChipsWeightManual(100.0)
-          val resultManual = partialChipsWeightManual(0.9)(0.1)
-          println(resultManual)
 
           val partialChipsWeight = curriedChipsWeight(100.0)
           val result = partialChipsWeight(0.9)(0.1)

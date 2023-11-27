@@ -23,4 +23,10 @@ object Task33 {
   def calculateChipsWeight(potatoWeight: Double, potatoWaterRatio: Double, chipsWaterRatio: Double): Double = {
   potatoWeight * (1 - potatoWaterRatio) / (1 - chipsWaterRatio)
   }
+
+  def calculateChipsWeightManual(potatoWeight: Double): Double => Double => Double = {
+    (potatoWaterRatio: Double) =>
+      (chipsWaterRatio: Double) =>
+        potatoWeight * (1 - potatoWaterRatio) / (1 - chipsWaterRatio)
+  }
 }
