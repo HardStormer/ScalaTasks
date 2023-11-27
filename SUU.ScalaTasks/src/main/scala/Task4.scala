@@ -3,7 +3,7 @@ object Task4 {
     def partition(list: List[Int], pivot: Int): (List[Int], List[Int], List[Int]) = {
       list.foldLeft((List[Int](), List[Int](), List[Int]())) {
         case ((less, equal, greater), num) =>
-          if (num < pivot) (num :: less, equal, greater)
+          if (num <= pivot) (num :: less, equal, greater)
           else if (num == pivot) (less, num :: equal, greater)
           else (less, equal, num :: greater)
       }

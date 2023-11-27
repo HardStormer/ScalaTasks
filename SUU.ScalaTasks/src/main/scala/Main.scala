@@ -11,7 +11,7 @@ object Main {
   def main(args: Array[String]): Unit = {
     var choice = 0
 
-    while (choice != 3) {
+    while (choice != 8) {
       println("Выберите группу заданий:")
       println("1. Задание 1 (Основы)")
       println("2. Задание 2 (операторы)")
@@ -124,9 +124,14 @@ object Main {
           println(modifiedString)
 
         case 3 =>
-          val chipsWeightFunction: Double => Double => Double = Task33.calculateChipsWeightManual(100.0)
-          val resultManual: Double = chipsWeightFunction(0.9)(0.1)
+          val chipsWeightFunction = Task33.calculateChipsWeightManual(100.0)
+
+          println(chipsWeightFunction)
+          val resultManual = chipsWeightFunction(0.9)
+
           println(resultManual)
+          val resultManual2 = chipsWeightFunction(0.1)
+          println(resultManual2)
 
           // Каррирование с использованием метода curried
           val curriedChipsWeight = Task33.calculateChipsWeight _ curried
