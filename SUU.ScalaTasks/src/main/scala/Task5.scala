@@ -8,14 +8,14 @@ object Task5 {
     private var examScore: Int = 0
 
     def addAttendanceScore: Unit ={
-      if(attendanceScore < 10){
+      if(attendanceScore < 20){
         attendanceScore += 1
       }
     }
 
     def addLabWorkScore: Unit = {
-      if (labWorkScore < 10) {
-        labWorkScore += 1
+      if (labWorkScore < 40) {
+        labWorkScore += 10
       }
     }
 
@@ -44,7 +44,13 @@ object Task5 {
     }
   }
 
-  class Practical(val topic: String, val lecturer: Teacher, val group: List[Student]) {
+  class Practice(val topic: String, val lecturer: Teacher, val group: List[Student]) {
+    def markAttendance(): Unit = {
+      group.foreach(student => student.addAttendanceScore)
+    }
+  }
+
+  class LabWork(val topic: String, val lecturer: Teacher, val group: List[Student]) {
     def markLabWork(): Unit = {
       group.foreach(student => student.addLabWorkScore)
     }
