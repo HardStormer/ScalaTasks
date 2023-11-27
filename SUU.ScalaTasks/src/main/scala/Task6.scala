@@ -3,6 +3,7 @@ object Task6 {
     def name: String
   }
 
+  class Hospital(val name: String, val list: List[AnimalCage[Animal]])
   class MediumAnimal(val name: String) extends Animal
 
   class SmallAnimal(val name: String) extends Animal

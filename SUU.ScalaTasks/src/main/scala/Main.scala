@@ -1,6 +1,7 @@
 import Task5.{Exam, LabWork, Lecture, Practice, Student, Teacher}
-import Task6.{AnimalCage, MediumAnimal, SmallAnimal}
+import Task6.{Animal, AnimalCage, Hospital, MediumAnimal, SmallAnimal}
 
+import scala.::
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.{Await, Future}
 import scala.concurrent.duration.Duration
@@ -287,13 +288,17 @@ object Main {
 
     val cage4 = cage3.addAnimal(mouse)
     cage4.printOccupants()
+
+
+    val hospital = new Hospital("Госпиталь", List(smallAnimalCage, mediumAnimalCage))
+    }
   }
 
   private def task7Menu(): Unit = {
     val random = new scala.util.Random
 
     // Генерация случайной последовательности из N пар чисел
-    val sequenceSize = 1000
+    val sequenceSize = 1000000
     val sequence = Seq.fill(sequenceSize)((random.nextInt(100), random.nextInt(100)))
 
     // Операции над элементами последовательности
@@ -345,7 +350,7 @@ object Main {
 
     val endTimeFourThreads = System.currentTimeMillis()
 
-    println(s"Время для трех потоков: ${endTimeFourThreads - startTimeFourThreads} ms")
+    println(s"Время для четырех потоков: ${endTimeFourThreads - startTimeFourThreads} ms")
 
     // Определение точки, начиная с которой использование нескольких потоков выгодно
     val threshold = 1000
